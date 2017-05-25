@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.min.css">
+<script type="text/javascript"></script>
+<style type="text/css">
+/* ------------------------------------------------------------- */
+/* 
+
+
+	common.css
+
+ */
+/* ------------------------------------------------------------- */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* 
+
+	topbar.css
+
+
+ */
+/* ------------------------------------------------------------- */
+div.topbar-out-wrap {
+	position: relative;
+}
+
+div.topbar-wrap {
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	/* background: #EDEDED; */
+	background: #F4F4F4;
+	overflow: hidden;
+	box-shadow: 0 0 3px #9A9A9A;
+}
+
+nav.topbar {
+	position: relative;
+}
+
+nav.topbar li {
+	margin-left: 10px;
+	font-size: 0.9em;
+	vertical-align: middle;
+}
+
+nav.topbar a {
+	line-height: 40px;
+}
+
+nav.topbar div.topbar-left {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+div.topbar-left li {
+	margin-left: 5px;
+	margin-right: 0px;
+}
+
+div.topbar-left li.topbar-left-i a {
+	padding: 5px 10px;
+}
+
+div.topbar-left li:FIRST-CHILD {
+	font-size: 1.3em;
+}
+
+div.topbar-left li:LAST-CHILD {
+	font-size: 1.5em;
+}
+
+nav.topbar .topbar-right {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin-right: 30px;
+}
+
+@media screen and (max-width:500px) {
+	nav.topbar div.topbar-right {
+		display: none;
+	}
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* 
+
+	sidebar.css
+
+
+ */
+div.sidebar-out-wrap {
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background: blue;
+	margin-top: 42px;
+	box-shadow: 0 0 3px #9A9A9A;
+}
+
+div.sidebar li {
+	/* --common.css에서 inline 해제----- */
+	display: block;
+
+	/* ------------------------------ */
+}
+
+div.sidebar li>a {
+	/* --인라인 속성인 a 태그 block으로 변경하여 한줄 차지----- */
+	display: block;
+	/* ----------------------------------------- */
+	padding: 5px 20px;
+	color: white;
+}
+
+div.sidebar div.sidebar-top-in {
+	height: 150px;
+	text-align: center;
+}
+
+div.sidebar div.sidebar-top-in h1 {
+	color: white;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* 
+
+	content.css
+
+
+ */
+</style>
+</head>
+<body>
+	<!-- 
+	블락 순서 
+	-> Topbar  
+	-> Sidebar  
+	-> Content{
+	 		
+	
+	
+	}
+	
+	 -->
+	<!------------------------------ Begin of Topbar-------------------------------------->
+	<div class="topbar-out-wrap">
+		<div class="topbar-wrap">
+			<nav class="topbar">
+				<div class="topbar-left">
+					<ul>
+						<li class="topbar-left-i"><a href="#">
+								<i class="fa fa-bars" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">MEGABOX</a></li>
+					</ul>
+				</div>
+				<div class="topbar-right">
+					<ul>
+						<li><a href="#">
+								<i class="fa fa-bell fa-lg" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">
+								<i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">
+								<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">
+								<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">
+								<i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">
+								<i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
+							</a></li>
+						<li><a href="#">
+								<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+							</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	<!------------------------------ End of Topbar-------------------------------------->
+	<!-- 
+	
+
+	
+	
+	 -->
+	<!------------------------------ Begin of SideBar-------------------------------------->
+	<div class="sidebar-out-wrap">
+		<div class="sidebar-wrap">
+			<div class="sidebar">
+				<div class="sidebar-top">
+					<div class="sidebar-top-in">
+						<h1>테스트</h1>
+					</div>
+				</div>
+				<div class="sidebar-bottom">
+					<ul>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+						<li><a href="#">item1</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- class="sidebar" -->
+		</div>
+	</div>
+	<!-- class="sidebar-out-wrap" -->
+	<!------------------------------ End of SideBar-------------------------------------->
+	<!-- 
+
+	
+	
+	
+	
+	 -->
+
+
+</body>
+</html>
