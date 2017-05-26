@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+/* ------------------------------------------------------------- */
+/* 
+
+
+	common.css
+
+ */
+/* ------------------------------------------------------------- */
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+ul {
+	list-style: none;
+}
+
+ul li {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+/* ------------------------------------------------------------- */

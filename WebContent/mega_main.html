@@ -5,156 +5,79 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" href="mycommon.css">
+
+
 <script type="text/javascript"></script>
 <style type="text/css">
-/* ------------------------------------------------------------- */
-/* 
-
-
-	common.css
-
- */
-/* ------------------------------------------------------------- */
-* {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-}
-
-ul {
-	list-style: none;
-}
-
-ul li {
-	display: inline-block;
-}
-
-a {
-	text-decoration: none;
-	color: black;
-}
-/* ------------------------------------------------------------- */
-/* ------------------------------------------------------------- */
-/* 
-
-	topbar.css
-
-
- */
-/* ------------------------------------------------------------- */
-div.topbar-out-wrap {
-	position: relative;
-}
-
-div.topbar-wrap {
-	position: fixed;
-	width: 100%;
-	height: 40px;
-	/* background: #EDEDED; */
-	background: #F4F4F4;
-	overflow: hidden;
-	box-shadow: 0 0 3px #9A9A9A;
-}
-
-nav.topbar {
-	position: relative;
-}
-
-nav.topbar li {
-	margin-left: 10px;
-	font-size: 0.9em;
-	vertical-align: middle;
-}
-
-nav.topbar a {
-	line-height: 40px;
-}
-
-nav.topbar div.topbar-left {
-	position: fixed;
-	top: 0;
-	left: 0;
-}
-
-div.topbar-left li {
-	margin-left: 5px;
-	margin-right: 0px;
-}
-
-div.topbar-left li.topbar-left-i a {
-	padding: 5px 10px;
-}
-
-div.topbar-left li:FIRST-CHILD {
-	font-size: 1.3em;
-}
-
-div.topbar-left li:LAST-CHILD {
-	font-size: 1.5em;
-}
-
-nav.topbar .topbar-right {
-	position: fixed;
-	top: 0;
-	right: 0;
-	margin-right: 30px;
-}
-
-@media screen and (max-width:500px) {
-	nav.topbar div.topbar-right {
-		display: none;
-	}
-}
 
 /* ------------------------------------------------------------- */
-/* ------------------------------------------------------------- */
-/* 
 
-	sidebar.css
-
-
- */
-div.sidebar-out-wrap {
-	position: fixed;
-	width: 200px;
-	height: 100%;
-	background: blue;
-	margin-top: 42px;
-	box-shadow: 0 0 3px #9A9A9A;
-}
-
-div.sidebar li {
-	/* --common.css에서 inline 해제----- */
-	display: block;
-
-	/* ------------------------------ */
-}
-
-div.sidebar li>a {
-	/* --인라인 속성인 a 태그 block으로 변경하여 한줄 차지----- */
-	display: block;
-	/* ----------------------------------------- */
-	padding: 5px 20px;
-	color: white;
-}
-
-div.sidebar div.sidebar-top-in {
-	height: 150px;
-	text-align: center;
-}
-
-div.sidebar div.sidebar-top-in h1 {
-	color: white;
-}
-
-/* ------------------------------------------------------------- */
-/* ------------------------------------------------------------- */
 /* 
 
 	content.css
 
+					<div class="content-out-wrap">
+					<div class="content-wrap">
+					<div class="content-title">
+					<div class="content-out">
+					<div class="content">
+					<div class="content-block-left">
+					<div class="content-block-right">
 
  */
+div.content-wrap-out {
+	background: #dddddd;
+	height: 100%;
+	width: 100%;
+}
+
+div.content-title {
+	position: absolute;
+	width: 100%;
+	top: 40px;
+	background: red;
+}
+
+div.content {
+	height: 100%;
+	background: deeppink;
+}
+
+div.content-wrap {
+	background: yellow;
+	width: 100%;
+	height: 100%;
+}
+
+div.content {
+	height: 100%;
+}
+
+div.col {
+	width: 400px;
+	display: inline-block;
+	height: 400px;
+	background: blue;
+	border: 1px solid grey;
+}
+/* ------------------------------------------------------------- */
+
+/* div.content-block-left */
+/*
+
+*/
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+
+/* div.content-block-right */
+/*
+
+*/
+
+/* ------------------------------------------------------------- */
 </style>
 </head>
 <body>
@@ -222,19 +145,84 @@ div.sidebar div.sidebar-top-in h1 {
 			<div class="sidebar">
 				<div class="sidebar-top">
 					<div class="sidebar-top-in">
-						<h1>테스트</h1>
+						<h1>SIDE MENU</h1>
 					</div>
 				</div>
 				<div class="sidebar-bottom">
 					<ul>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
-						<li><a href="#">item1</a></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>상영관 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">상영관 추가</a></li>
+								<li><a href="javascript:void(0)">상영관 리스트</a></li>
+							</ul></li>
+
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>스크린 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">스크린 추가</a></li>
+								<li><a href="javascript:void(0)">스크린 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>상영스케줄 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">상영스케줄 추가</a></li>
+								<li><a href="javascript:void(0)">상영스케줄 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>상영관 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">상영관 추가</a></li>
+								<li><a href="javascript:void(0)">상영관 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>좌석 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">좌석 추가</a></li>
+								<li><a href="javascript:void(0)">좌석 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-cubes sidebar-i" aria-hidden="true"></i>영화관 관리 <i class="fa fa-angle-right menu-arrow-right" aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">영화관 지점 추가</a></li>
+								<li><a href="javascript:void(0)">영화관 지점 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>영화 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">영화 추가</a></li>
+								<li><a href="javascript:void(0)">영화 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>예약 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">예약 현황</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>가격 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">티켓 가격 추가</a></li>
+								<li><a href="javascript:void(0)">티켓 가격 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>스태프 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a>
+							<ul class="submenu">
+								<li><a href="javascript:void(0)">스태프 추가</a></li>
+								<li><a href="javascript:void(0)">스태프 리스트</a></li>
+							</ul></li>
+						<li><a href="javascript:void(0)">
+								<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>매출 정보<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+							</a></li>
 					</ul>
 				</div>
 			</div>
@@ -250,6 +238,42 @@ div.sidebar div.sidebar-top-in h1 {
 	
 	
 	 -->
+	<!------------------------------ Begin of Content-------------------------------------->
+
+
+
+	<div class="content-wrap-out">
+		<div class="content-title">
+			<a>content-title</a>
+		</div>
+
+		<div class="content-wrap">
+			<div class="content">
+				<div class="col content-col-1"></div>
+
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<!------------------------------ End of Content-------------------------------------->
+
+
+
+
+
+
 
 
 </body>

@@ -1,0 +1,125 @@
+@CHARSET "UTF-8";
+
+/* ------------------------------------------------------------- */
+/* 
+
+	topbar.css
+
+
+ */
+/* ------------------------------------------------------------- */
+div.topbar-out-wrap {
+	position: relative;
+}
+
+div.topbar-wrap {
+	position: fixed;
+	width: 100%;
+	height: 40px;
+	/* background: #EDEDED; */
+	background: #F4F4F4;
+	overflow: hidden;
+	box-shadow: 0 0 3px #9A9A9A;
+	z-index: 1;
+}
+
+nav.topbar {
+	position: relative;
+}
+
+nav.topbar li {
+	margin-left: 10px;
+	font-size: 0.9em;
+	vertical-align: middle;
+}
+
+nav.topbar a {
+	line-height: 40px;
+}
+
+nav.topbar div.topbar-left {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+div.topbar-left li {
+	margin-left: 5px;
+	margin-right: 0px;
+}
+
+div.topbar-left li.topbar-left-i a {
+	padding: 5px 10px;
+}
+
+div.topbar-left li:FIRST-CHILD {
+	font-size: 1.3em;
+}
+
+div.topbar-left li:LAST-CHILD {
+	font-size: 1.5em;
+}
+
+nav.topbar .topbar-right {
+	position: fixed;
+	top: 0;
+	right: 0;
+	margin-right: 2%;
+}
+
+@media screen and (max-width:500px) {
+	nav.topbar div.topbar-right {
+		display: none;
+	}
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
+/* 
+
+	sidebar.css
+
+
+ */
+div.sidebar-out-wrap::-webkit-scrollbar {
+	width: 0px;
+}
+
+div.sidebar-out-wrap {
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background: blue;
+	margin-top: 42px;
+	box-shadow: 0 0 3px #9A9A9A;
+	overflow: auto;
+	display: none;
+}
+
+div.sidebar li {
+	/* --common.css에서 inline 해제----- */
+	display: block;
+
+	/* ------------------------------ */
+}
+
+div.sidebar li>a {
+	/* --인라인 속성인 a 태그 block으로 변경하여 한줄 차지----- */
+	display: block;
+	/* ----------------------------------------- */
+	padding: 6px 20px;
+	color: white;
+	background: grey;
+}
+
+div.sidebar div.sidebar-top-in {
+	height: 150px;
+	text-align: center;
+}
+
+div.sidebar div.sidebar-top-in h1 {
+	color: white;
+}
+
+/* ------------------------------------------------------------- */
+/* ------------------------------------------------------------- */
