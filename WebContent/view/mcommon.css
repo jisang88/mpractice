@@ -106,15 +106,21 @@ button:ACTIVE {
 	box-shadow: 1px 1px 2px black;
 }
 
-div.content-controller {
+div.content-controller, div.form-panel {
 	margin: 20px auto;
 	width: 90%;
 }
 
 @media screen and (max-width:1100px) {
-	div.content-controller {
+	div.content-controller, div.form-panel {
 		width: 1000px;
 	}
+}
+
+div.form-panel {
+	position: relative;
+	background: white;
+	height: 300px;
 }
 
 div.content-controller div.row {
