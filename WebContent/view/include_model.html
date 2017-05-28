@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link rel="stylesheet" href="../resources/font-awesome-4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="mcommon.css">
+<script type="text/javascript">
+	$(function() {
+		$('.sidebar-item').click(function() {
+			megabox.sidebarEachItemReset($(this));
+		});
+
+		$('.topbar-hamburger').click(function() {
+			megabox.topbarHamburgerToggle($(this));
+		});
+
+		/* $('div.col-left div.col-content')
+				.css('height', $('div.col-right div.col-content').css('height'));
+		console.log($('.topbar-wrap').css('height')) */
+	});
+
+	var megabox = new function() {
+
+		this.sidebarEachItemReset = function(where) {
+			var $target = where;
+			$target.toggleClass('clicked')
+			if ($target.hasClass('clicked')) {
+				$target.next().slideDown('fast');
+			} else {
+				$target.next().slideUp('fast');
+			}
+		};
+
+		this.sidebarAllItemReset = function() {
+			var $target = $('.sidebar-item');
+			$target.removeClass('clicked')
+			$target.next().hide();
+		};
+
+		this.topbarHamburgerToggle = function(where) {
+			var $target = where;
+			$target.toggleClass('clicked')
+			if ($target.hasClass('clicked')) {
+				$('.sidebar-wrap').animate({
+					'margin-left' : '0px'
+				}, 'fast');
+			} else {
+				$('.sidebar-wrap').animate({
+					'margin-left' : '-218px'
+				}, 'fast');
+				this.sidebarAllItemReset();
+			}
+		}
+	};
+</script>
+<style type="text/css">
+div.topbar-wrap {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background: #d6d6d6;
+	width: 100%;
+	height: 40px;
+	z-index: 1;
+	overflow: hidden;
+	box-shadow: 0 0 5px black;
+}
+
+div.topbar-wrap a {
+	display: block;
+	line-height: 40px;
+	font-size: 1.1em;
+}
+
+div.topbar:AFTER {
+	clear: left;
+	content: "";
+	display: block;
+}
+
+div.topbar-wrap div.topbar-left a {
+	font-size: 1.5em;
+}
+
+div.topbar-wrap div.topbar-left ul>li:FIRST-CHILD {
+	margin-right: 20px;
+}
+
+div.topbar-wrap div.topbar-right li {
+	margin-left: 20px;
+}
+
+div.topbar-left {
+	float: left;
+	margin-left: 30px;
+}
+
+div.topbar-right {
+	float: right;
+	margin-right: 30px;
+}
+/* ------------------------------------------------------------------------------------ */
+/* 
+
+
+
+
+
+
+*/
+div.sidebar-wrap {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background: red;
+	width: 218px;
+	height: calc(100% - 40px);
+	overflow: auto;
+	margin-left: -218px;
+	z-index: 1;
+}
+
+div.sidebar {
+	width: 200px;
+	background: blue;
+	height: 100%;
+}
+
+div.sidebar div.sidebar-bottom {
+	padding-left: 20px;
+}
+
+div.sidebar div.sidebar-bottom li i {
+	margin-right: 10px;
+}
+
+div.sidebar h2 {
+	text-align: center;
+	margin: 0;
+	padding: 30px 0;
+}
+
+div.sidebar li {
+	float: none;
+	font-size: 1.1em;
+}
+
+div.sidebar li ul {
+	margin-left: 35px;
+}
+
+div.sidebar li ul li {
+	font-size: 0.85em;
+}
+
+div.sidebar div.sidebar-bottom ul>li {
+	margin-bottom: 10px;
+}
+
+div.sidebar li ul.submenu {
+	display: none;
+}
+
+div.sidebar li ul.submenu li {
+	margin-bottom: 0px;
+}
+/* ------------------------------------------------------------------------------------ */
+/* 
+
+
+
+
+
+
+*/
+div.content-title-wrap {
+	padding-top: 40px;
+	border-bottom: 1px solid #C6C6C6;
+}
+
+div.content-title {
+	padding-top: 20px;
+	padding-left: 10%;
+	background: white;
+}
+
+div.content-title a {
+	display: inline-block;
+	line-height: 40px;
+	font-size: 1.3em;
+}
+
+div.content-title a:FIRST-CHILD {
+	border-bottom: 3px solid red;
+}
+
+/* ------------------------------ */
+div.content {
+	height: 880px;
+	background: white;
+	width: 90%;
+	margin: 20px auto;
+	padding: 50px 0;
+}
+
+@media screen and (max-width:1100px) {
+	div.content {
+		width: 1000px;
+	}
+	div.content-title {
+		padding-left: 0;
+	}
+}
+
+/* ------------------------------------------------- >   col-left */
+div.col-left {
+	position: absolute;
+	width: 40%;
+	left: 0;
+	top: 0;
+	background: yellow;
+}
+/* div.row 가 position:relative 이라서 내부에서 absolute 가능  */
+div.col-left div.col-content {
+	position: absolute;
+	right: 0;
+	top: 0;
+	/* background: red; */
+}
+
+div.col-left div.col-content div.img-main img {
+	width: 305px;
+}
+
+div.col-left div.col-content div.img-thum img {
+	width: 72px;
+}
+
+div.col-left div.col-content div.form-group label {
+	display: none;
+}
+
+div.col-left div.col-content div.form-group input {
+	width: 100%;
+}
+
+div.col-left div.col-content div.form-group {
+	margin-bottom: 5px;
+}
+
+div.col-left  div.col-content div.row:LAST-CHILD div.form-group {
+	margin: 30px 0;
+}
+
+div.col-left  label ~ input[type="submit"] {
+	height: 40px;
+	border: 1px solid red;
+	font-size: 1em;
+	background: red;
+	color: white;
+	font-size: 1em;
+}
+
+div.col-left  label ~ input[type="submit"]:HOVER {
+	background: blue;
+	border: 1px solid blue;
+}
+
+div.col-left  label ~ input[type="submit"]:FOCUS {
+	box-shadow: none;
+}
+
+div.col-left  label ~ input[type="submit"]:ACTIVE {
+	box-shadow: 0 0 2px blue;
+	font-size: 0.95em;
+}
+
+/* ------------------------------ */
+/* ------------------------------------------------- >   col-right */
+div.col-right {
+	position: absolute;
+	width: 60%;
+	right: 0;
+	top: 0;
+	background: white;
+	font-size: 1em;
+}
+
+small {
+	text-align: right;
+}
+
+div.col-right div.col-content {
+	/* background: red; */
+	width: 520px;
+	margin-left: 10%;
+}
+
+div.col-right div.col-content  label {
+	width: 100px;
+	/* background: blue; */
+	vertical-align: middle;
+}
+
+div.col-right div.col-content input {
+	width: 400px;
+	padding: 8px 10px;
+}
+
+div.form-group label {
+	font-size: 13px;
+}
+
+div.col-right div.col-content div.form-group.last {
+	position: relative;
+}
+
+.form-group {
+	
+}
+
+div.col-right textarea {
+	width: 97%;
+	position: absolute;
+	bottom: -160px;
+	right: 12px;
+}
+/* ------------------------------------------------------------------------------------ */
+/* 
+
+
+
+
+
+
+*/
+
+/* ------------------------------------------------------------------------------------ */
+/* 
+
+
+
+
+
+
+*/
+
+/* ------------------------------------------------------------------------------------ */
+/* 
+
+
+
+
+
+
+*/
+</style>
+</head>
+<body>
+	<!-- 
+	블락 순서 
+	-> Topbar  
+	-> Sidebar  
+	-> Content{
+	 		
+	
+	
+	}
+	
+	 -->
+	<!------------------------------ Begin of Topbar-------------------------------------->
+	<div class="topbar-wrap">
+		<nav class="topbar">
+			<div class="topbar-left">
+				<ul>
+					<li class="topbar-left-i"><a href="#" class="topbar-hamburger">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">MEGABOX</a></li>
+				</ul>
+			</div>
+			<div class="topbar-right">
+				<ul>
+					<li><a href="#">
+							<i class="fa fa-bell fa-lg" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">
+							<i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">
+							<i class="fa fa-exclamation-circle fa-lg" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">
+							<i class="fa fa-envelope fa-lg" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">
+							<i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">
+							<i class="fa fa-ellipsis-v fa-lg" aria-hidden="true"></i>
+						</a></li>
+					<li><a href="#">
+							<i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+						</a></li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!------------------------------ End of Topbar-------------------------------------->
+	<!-- 
+	
+
+	
+	
+	 -->
+	<!------------------------------ Begin of SideBar-------------------------------------->
+	<div class="sidebar-wrap">
+		<div class="sidebar">
+			<div class="sidebar-top">
+				<div class="sidebar-top-in">
+					<h2>SIDE MENU</h2>
+				</div>
+			</div>
+			<div class="sidebar-bottom">
+				<ul>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>상영관 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">상영관 추가</a></li>
+							<li><a href="javascript:void(0)">상영관 리스트</a></li>
+						</ul></li>
+
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>스크린 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">스크린 추가</a></li>
+							<li><a href="javascript:void(0)">스크린 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>상영스케줄 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">상영스케줄 추가</a></li>
+							<li><a href="javascript:void(0)">상영스케줄 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>상영관 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">상영관 추가</a></li>
+							<li><a href="javascript:void(0)">상영관 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>좌석 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">좌석 추가</a></li>
+							<li><a href="javascript:void(0)">좌석 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-cubes sidebar-i" aria-hidden="true"></i>영화관 관리 <i class="fa fa-angle-right menu-arrow-right" aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">영화관 지점 추가</a></li>
+							<li><a href="javascript:void(0)">영화관 지점 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>영화 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">영화 추가</a></li>
+							<li><a href="javascript:void(0)">영화 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>예약 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">예약 현황</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>가격 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">티켓 가격 추가</a></li>
+							<li><a href="javascript:void(0)">티켓 가격 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)" class="sidebar-item">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>스태프 관리<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a>
+						<ul class="submenu">
+							<li><a href="javascript:void(0)">스태프 추가</a></li>
+							<li><a href="javascript:void(0)">스태프 리스트</a></li>
+						</ul></li>
+					<li><a href="javascript:void(0)">
+							<i class="fa fa-newspaper-o sidebar-i" aria-hidden="true"></i>매출 정보<i class="fa fa-angle-right menu-arrow-right " aria-hidden="true"></i>
+						</a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- class="sidebar" -->
+	</div>
+	<!------------------------------ End of SideBar-------------------------------------->
+
+
+
+
+	<div class="content-title-wrap">
+		<div class="content-title ">
+			<a>무비리스트</a>
+			<a>무비등록</a>
+		</div>
+	</div>
+
+
+
+
+	<div class="content">
+		<form>
+			<div class="row">
+				<div class="col col-left">
+					<div class="row">
+						<div class="col-content">
+							<div class="row img-main">
+								<img alt="" src="i2.jpg">
+							</div>
+							<div class="row img-thum">
+								<img alt="" src="i2.jpg"> <img alt="" src="i2.jpg"> <img alt="" src="i2.jpg"> <img alt="" src="i2.jpg">
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<label>1</label>
+									<input type="file">
+								</div>
+								<div class="form-group">
+									<label>1</label>
+									<input type="file">
+								</div>
+								<div class="form-group">
+									<label>1</label>
+									<input type="file">
+								</div>
+								<div class="form-group">
+									<label>1</label>
+									<input type="file">
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group">
+									<label>1</label>
+									<input type="submit" onclick="return false;" value="무비추가">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col col-right">
+
+					<div class="col-content">
+						<div class="form-group">
+							<label>
+								영화이름<br> <small>-한국어-</small>
+							</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>
+								영화이름<br> <small>-영어-</small>
+							</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>감독</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>배우</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>나라</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>나이제한</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>평점</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>누적관객</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>시간길이</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>개봉날짜</label>
+							<input type="text">
+						</div>
+						<div class="form-group">
+							<label>제작사</label>
+							<input type="text">
+						</div>
+						<div class="form-group last">
+							<label>줄거리</label>
+							<textarea rows="10"></textarea>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<!------------------------------ End of Content-------------------------------------->
+
+
+
+</body>
+</html>

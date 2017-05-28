@@ -4,14 +4,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<link rel="stylesheet" href="resources/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../resources/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="menu.css">
 <link rel="stylesheet" href="mycommon.css">
 
 
 <script type="text/javascript"></script>
 <style type="text/css">
-
+body {
+	background: #dddddd;
+}
 /* ------------------------------------------------------------- */
 
 /* 
@@ -28,41 +30,103 @@
 
  */
 div.content-wrap-out {
-	background: #dddddd;
-	height: 100%;
 	width: 100%;
+	padding-top: 40px;
 }
 
 div.content-title {
-	position: absolute;
 	width: 100%;
-	top: 40px;
-	background: red;
+	border-bottom: 1px solid black;
+}
+
+div.content-title a {
+	font-size: 2em;
+	border-bottom: 2px solid red;
 }
 
 div.content {
-	height: 100%;
-	background: deeppink;
+	/* font-size: 0; */
+	
+}
+
+div.content:AFTER {
+	clear: both;
+	content: "";
+	display: block;
 }
 
 div.content-wrap {
-	background: yellow;
-	width: 100%;
-	height: 100%;
-}
-
-div.content {
-	height: 100%;
+	margin: 0 auto;
+	width: 92%;
+	text-align: center;
+	/* background: red; */
+	margin-top: 30px;
 }
 
 div.col {
-	width: 400px;
-	display: inline-block;
-	height: 400px;
-	background: blue;
-	border: 1px solid grey;
+	/* 	display: inline-block;
+	font-size: 16px; */
+	width: 300px;
+	height: 300px;
+	background: white;
+	float: left;
 }
-/* ------------------------------------------------------------- */
+
+div.content-col-1 {
+	width: 45%;
+	height: 100%;
+}
+
+div.content-col-2 {
+	text-align: left;
+	width: 50%;
+	height: 100%;
+	padding: 70px 0;
+}
+
+div.content-col-1-row-1 img {
+	width: 300px;
+	height: 400px;
+}
+
+@media screen and (max-width:1000px) {
+	div.content-wrap {
+		width: 1000px;
+	}
+}
+
+div.content-col-2 {
+	box-shadow: 0 0 4px black;
+	margin-left: 3.5%;
+	padding-left: 4%;
+}
+
+div.content-col-2 div.form-row {
+	margin-bottom: 30px;
+}
+
+div.content-col-2 div.form-row input {
+	width: 350px;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+	padding-left: 20px;
+	padding-right: 10px;
+	vertical-align: middle;
+}
+
+input {
+	border-radius: 3px;
+	border: 1px solid grey;
+	padding: 6px 10px;
+	outline: none;
+}
+
+input:FOCUS {
+	box-shadow: 0 0 1px black;
+}
 
 /* div.content-block-left */
 /*
@@ -249,7 +313,66 @@ div.col {
 
 		<div class="content-wrap">
 			<div class="content">
-				<div class="col content-col-1"></div>
+				<form>
+					<div class="col content-col-1">
+						<div>
+							<h1>무비등록</h1>
+						</div>
+						<div class="row content-col-1-row-1">
+							<img alt="" src="i2.jpg">
+						</div>
+						<div class="row">
+							<h1>df</h1>
+						</div>
+					</div>
+					<div class="col content-col-2">
+
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<input type="text" placeholder="항목">
+						</div>
+						<div class="form-row">
+							<label>항목</label>
+							<textarea></textarea>
+						</div>
+					</div>
+				</form>
 
 			</div>
 

@@ -1,0 +1,347 @@
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	background: #f1f1f1;
+}
+
+h1, h2, h3 {
+	margin: 0;
+}
+
+a {
+	color: black;
+	display: block;
+	text-decoration: none;
+}
+
+a:HOVER {
+	color: blue;
+	text-decoration: none;
+}
+
+a:ACTIVE {
+	font-size: .96em;
+	font-weight: bold;
+}
+
+ul {
+	list-style: none;
+}
+
+ul:AFTER {
+	clear: left;
+	content: "";
+	display: block;
+}
+
+li {
+	float: left;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+	position: relative;
+}
+
+div.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: inline-block;
+	width: 20%;
+	margin: 0;
+	padding: 0;
+}
+
+div.form-group input {
+	width: 60%;
+	margin: 0;
+	padding: 0;
+	border-radius: 2px;
+	border: 1px solid #CECECE;
+	padding: 4px 10px;
+}
+
+div.form-group input:FOCUS {
+	outline: none;
+	box-shadow: 0 0 5px #4b24b5;
+	border: 1px solid #4b24b5;
+	/* 	border: 3px solid black; */
+	background: grey;
+	color: white;
+}
+
+div.form-group textarea:FOCUS {
+	outline: none;
+	box-shadow: 0 0 5px red;
+	/* border: 1px solid red; */
+	background: yellow;
+}
+
+textarea {
+	resize: none;
+	border: 1px solid #CECECE;
+}
+
+button {
+	padding: 5px 10px;
+	border: 1px solid black;
+	background: white;
+	border-radius: 2px;
+}
+
+button:ACTIVE {
+	/* padding: 4.5px 9.5px; */
+	box-shadow: 1px 1px 2px black;
+}
+
+div.content-controller {
+	margin: 20px auto;
+	width: 90%;
+}
+
+@media screen and (max-width:1100px) {
+	div.content-controller {
+		width: 1000px;
+	}
+}
+
+div.content-controller div.row {
+	position: relative;
+	height: 55px;
+	background: white;
+}
+
+div.content-controller div.row ul:FIRST-CHILD {
+	position: absolute;
+	left: 0px;
+	top: 12px;
+	margin-left: 10px;
+}
+
+div.content-controller div.row ul:LAST-CHILD {
+	position: absolute;
+	right: 0px;
+	top: 12px;
+	margin-right: 10px;
+}
+
+div.content-controller div.row ul:FIRST-CHILD li {
+	margin-right: 6px;
+}
+
+div.content-controller div.row ul:LAST-CHILD li {
+	margin-left: 6px;
+}
+
+div.content-controller div.row a {
+	border: 1px solid red;
+	padding: 2px 5px;
+	width: 70px;
+	line-height: 27px;
+	text-align: center;
+	color: #5F5E5E;
+}
+
+div.content-controller a.check {
+	position: relative;
+}
+
+div.content-controller a.check label {
+	background: transparent;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+/* -------------------------------------- */
+/* 
+
+
+*/
+/* --------------------------- table*/
+table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	width: 98%;
+	text-align: left;
+	margin: 0 auto;
+	font-size: 0.85em;
+}
+
+table.strip tbody tr:NTH-CHILD(2n-1) {
+	background: #FBFBFB;
+}
+
+thead {
+	vertical-align: middle;
+}
+
+thead tr {
+	border-bottom: 2px solid #D9D9D9;
+}
+
+tr {
+	height: 35px;
+	border-bottom: 1px solid #DFDFDF;
+}
+
+table.cell-h-20  tbody tr {
+	height: 20px;
+}
+
+table.cell-h-25 tbody tr {
+	height: 25px;
+}
+
+table.cell-h-30 tbody tr {
+	height: 30px;
+}
+
+table.cell-h-35 tbody tr {
+	height: 35px;
+}
+
+table.cell-h-40 tbody tr {
+	height: 40px;
+}
+
+table.cell-h-45 tbody tr {
+	height: 45px;
+}
+
+table.cell-h-50 tbody tr {
+	height: 50px;
+}
+
+th.cell-w-100, td.cell-w-100 {
+	width: 100px;
+}
+
+th.cell-w-120, td.cell-w-120 {
+	width: 120px;
+}
+
+th.cell-w-140, td.cell-w-140 {
+	width: 140px;
+}
+
+th.cell-w-160, td.cell-w-160 {
+	width: 160px;
+}
+
+th.cell-w-180, td.cell-w-180 {
+	width: 180px;
+}
+
+th.cell-w-200, td.cell-w-200 {
+	width: 200px;
+}
+
+th.cell-w-220, td.cell-w-220 {
+	width: 220px;
+}
+
+th.cell-w-240, td.cell-w-240 {
+	width: 240px;
+}
+
+th.cell-w-260, td.cell-w-260 {
+	width: 260px;
+}
+
+th.cell-w-280, td.cell-w-280 {
+	width: 280px;
+}
+
+th.cell-w-300, td.cell-w-300 {
+	width: 300px;
+}
+
+th.cell-w-320, td.cell-w-320 {
+	width: 320px;
+}
+
+th.cell-w-340, td.cell-w-340 {
+	width: 340px;
+}
+
+th.cell-w-360, td.cell-w-360 {
+	width: 360px;
+}
+
+th.cell-w-380, td.cell-w-380 {
+	width: 380px;
+}
+
+th.cell-w-400, td.cell-w-400 {
+	width: 400px;
+}
+/* --------------------------- pagination*/
+div.pagination {
+	margin: 30px auto 0;
+	text-align: center;
+	background: grey;
+}
+
+div.pagination ul {
+	display: inline-block;
+}
+
+div.pagination a {
+	width: 30px;
+	font-size: .9em;
+	line-height: 35px;
+	border-bottom: 2px solid transparent;
+	background: lightgrey;
+}
+
+div.pagination a:HOVER {
+	color: red;
+	border-bottom: 2px solid red;
+}
+/* -------------------------------------- */
+/* 
+
+
+*/
+/* --------------------------- search-box*/
+div.search-box {
+	position: relative;
+	width: 220px;
+}
+
+div.search-box  input[type="text"] {
+	width: 220px;
+	padding: 5px 50px 5px 15px;
+}
+
+div.search-box a {
+	position: absolute;
+	top: 1px;
+	right: 1px;
+	background: #f1f1f1;
+	padding: 3px 10px;
+}
+
+div.search-box a:HOVER {
+	color: red;
+}
+
+div.search-box a:ACTIVE {
+	font-size: .9em;
+}
+
+/* ---------------------------------- */
